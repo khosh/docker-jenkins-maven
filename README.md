@@ -1,7 +1,7 @@
 docker-java8-jenkins-maven-git-nano
 ===================================
 
-This repository provides the Dockerfile that builds a continuous integration container from Ubuntu 14.04 LTS, plus Oracle Java 8, Jenkins 1.574, Maven 3, Git and Nano.
+This repository provides the Dockerfile that builds a continuous integration container from Ubuntu 16.04 LTS, plus Oracle Java 8, Jenkins 1.574, Maven 3, Git and Nano.
 
 Sets up a container with jenkins installed listening on port 8080.
 
@@ -9,7 +9,7 @@ Usage
 
 To run the container with the same time zone as the host, do the following:
 
-    sudo docker run -t -i -p 8080:8080 -v /etc/localtime:/etc/localtime:ro -P stephenreed/java8-jenkins-maven-git-nano
+    sudo docker run -t -i -p 8080:8080 -v /etc/localtime:/etc/localtime:ro -P kiyostar/jenkins-maven-proxy
 
 To start Jenkins from the container's command prompt . . .
 
