@@ -6,9 +6,8 @@
 # Nano
 
 # pull base image Ubuntu 16.04 LTS (Xenial)
-FROM ubuntu:xenial
-
-MAINTAINER Stephen L. Reed (stephenreed@yahoo.com)
+# FROM ubuntu:xenial
+FROM ubuntu@sha256:97b54e5692c27072234ff958a7442dde4266af21e7b688e7fca5dc5acc8ed7d9
 
 # this is a non-interactive automated build - avoid some warning messages
 ENV DEBIAN_FRONTEND noninteractive
@@ -36,12 +35,12 @@ ENV MAVEN_HOME /opt/maven
 # copy jenkins war file to the container
 ADD http://mirrors.jenkins.io/war-stable/latest/jenkins.war /opt/jenkins.war
 RUN chmod 644 /opt/jenkins.war
-ENV JENKINS_HOME /jenkins
+ENV JENKINS_HOME /var/lib/jenkins
 
 # configure the container to run jenkins, mapping container port 8080 to that host port
-ENTRYPOINT ["java", "-jar", "/opt/jenkins.war"]
+#ENTRYPOINT ["java", "-jar", "/opt/jenkins.war"]
 EXPOSE 8080
 
-CMD [""]
+#CMD [""]
 
 
