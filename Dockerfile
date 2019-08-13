@@ -18,7 +18,8 @@ RUN apt update; \
   apt install -y default-jre curl wget git nano; \
   apt-get clean
 
-ENV JAVA_HOME /usr
+RUN apt install -y openjdk-8-jdk
+ENV JAVA_HOME  /usr/lib/jvm/java-8-openjdk-amd64
 ENV PATH $JAVA_HOME/bin:$PATH
 
 
